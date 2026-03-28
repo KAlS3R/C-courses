@@ -182,7 +182,7 @@ int returnmax(int a, int b)
 	printf("%d\n", maxnumber );
 	return 0;  
 }
-	*/
+	
 
 #include "language.h"
 #include <stdio.h>
@@ -196,3 +196,101 @@ int main(void)
 	
 	return 0;
 } 
+
+
+
+#include <stdio.h>
+
+#define ARRAY_SIZE(format, ...) fprintf(stderr, "ERREUR : " format, ##__VA_ARGS__)
+
+int main(void)
+{
+
+	return 0;
+}
+
+
+
+#include <stdio.h>
+
+int triple(int *nombre)
+{
+	*nombre *= 3;
+}
+
+int main(int argc, char * argv[])
+{
+	int value = 10;
+	triple(&value);
+	printf("%d", value);
+	return 0;
+}
+
+*
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc, char * argv[])
+{
+
+	int tableau[4], i = 0;
+
+	tableau[0] = 10;
+	tableau[1] = 23;
+	tableau[2] = 505;
+	tableau[3] = 8;
+	for (i = 0 ; i < 4 ; i++)
+	{
+
+		tableau[i] = i;
+	}	
+
+	for (i = 0; i < 4 ; i++)
+	{
+		printf("%d\n", tableau[i]);
+	}
+	return 0; 
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char * argv[])
+{
+	int tableau[4] = {0, 0, 0, 0}, i = 0;
+	for (i = 0; i < 4; i++)
+	{
+		printf("%p\n", &tableau[i]);
+	}
+	return 0;
+}
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void affichertableau(int *tableau, int tailleDuTableau);
+ 
+int main(int argc, char *argv[])
+{
+    int tableau[4] = {10, 15, 3};
+ 
+    // On affiche le contenu du tableau
+    affichertableau(&tableau, 4);
+ 
+    return 0;
+}
+ 
+
+void affichertableau(int *tableau, int tailleDuTableau)
+{
+	int i = 0;
+	for (i = 0; i < tailleDuTableau; i++)
+	{
+		printf("%d\n", tableau[i]);
+	}
+}
