@@ -267,7 +267,7 @@ int main(int argc, char * argv[])
 	return 0;
 }
 
-*/
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -280,7 +280,7 @@ int main(int argc, char *argv[])
     int tableau[4] = {10, 15, 3};
  
     // On affiche le contenu du tableau
-    affichertableau(&tableau, 4);
+    affichertableau(tableau, 4);
  
     return 0;
 }
@@ -293,4 +293,203 @@ void affichertableau(int *tableau, int tailleDuTableau)
 	{
 		printf("%d\n", tableau[i]);
 	}
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int sommeTableau(int *tableau, int tailleDuTableau);
+double moyenneTableau(int sommeTableau, int moyenneDuTableau);
+
+int main(int argc, char * argv[])
+{
+	int tableau[5] = {5, 3, 4, 8 , 7};
+
+	double somme = sommeTableau(tableau, 5);
+	printf("%f\n", somme);
+
+	double moyenne = moyenneTableau(somme, 5);
+	printf("\n%f\n", moyenne);
+
+
+	return 0;
+
+
+}
+
+int sommeTableau(int *tableau, int tailleDuTableau)
+{
+	int somme = 0;
+	for (int i = 0; i < tailleDuTableau; i++)
+	{
+		somme += tableau[i];
+		
+	}
+	return (double)somme;
+}
+
+
+double moyenneTableau(int sommeTableau, int tailleTableau)
+{
+	return (double)sommeTableau / (double)tailleTableau;
+}	
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char * argv[])
+{
+	char lettre = 'S';
+
+	//scanf("%c", &lettre);
+	printf("%c\n", &lettre);
+	return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char * argv[])
+{
+	char prenom[100];
+	
+	printf("Commetn tu t'appelles ?");
+	scanf("%s", &prenom);
+	printf("Salut %s", prenom);
+	return 0;
+}
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//size_t strlen(const char* chaine);
+//int lenghtSentence(const char* chaine);
+char* strcpy(char* copieDeLaChaine, const char* chaineACopier);
+char* strcat(char* copieDeLaChaine, const char* chaineACopier);
+int strcmp(const char* chaine1, const char* chaine2);
+char* strchr(const char* chaine, int caractereARechercher);
+char* strstr(const char* chaine, const char* chaineARechercher);
+
+int main(int argc, char * argv[])
+{
+	char chaine[] = "Salut";
+	int longueurChaine = 0;
+
+	longueurChaine = lenghtSentence(chaine);
+
+	printf("La chaine %s fait %d de long", chaine, longueurChaine);
+
+	return 0;
+}
+
+int lenghtSentence(const char* chaine)
+{
+	int nombreDeCharacteres = 0;
+	char caractereActuel = 0;
+
+	do 
+	{
+		caractereActuel = chaine[nombreDeCharacteres];
+		nombreDeCharacteres++;
+	}
+	while(caractereActuel != '\0');
+
+	nombreDeCharacteres--;
+
+	return nombreDeCharacteres;
+
+
+}
+
+
+{
+	char chaine[] = "Salut", copie[100] = {0};
+
+	strcpy(copie, chaine);
+
+	printf("chaine de base : %s\n", chaine);
+	printf("chaine de copié : %s\n", copie);
+
+	return 0;
+}
+
+{
+	char chaine1[100] = "Salut", chaine2[] = "Mat";
+	strcat(chaine1, chaine2);
+	printf("chaine1 vaut : %s\n", chaine1);
+	return 0;
+
+}
+
+{
+    char chaine1[] = "Texte de test", chaine2[] = "Texte de test";
+
+    if (strcmp(chaine1, chaine2) == 0) // Si chaînes identiques
+    {
+        printf("Les chaines sont identiques\n");
+    }
+    else
+    {
+        printf("Les chaines sont differentes\n");
+    }
+
+    return 0;
+}
+
+
+
+{
+    char chaine[] = "Texte de test", *suiteChaine = NULL;
+
+    suiteChaine = strchr(chaine, 'd');
+    if (suiteChaine != NULL) // Si on a trouvé quelque chose
+    {
+        printf("Voici la fin de la chaine a partir du premier d : %s", suiteChaine);
+    }
+
+    return 0;
+}
+
+
+
+{
+    char *suiteChaine;
+
+    // On cherche la première occurrence de "test" dans "Texte de test" :
+    suiteChaine = strstr("Texte de test", "Texte");
+    if (suiteChaine != NULL)
+    {
+        printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine);
+    }
+
+    return 0;
+}
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "main.h"
+
+
+int main(int argc, char * argv[])
+{
+	Coordonnees point;
+	scanf("%d", &point.x);
+	scanf("%d", &point.y);
+	printf("La valeur de point.x est : %d, et celle de point y est : %d", point.x, point.y);
+	//point.x = 10;
+	//point.y = 20;
+	//printf("Le point x est %d", point.x);
+	//puts("hello");
+	return 0;
 }
