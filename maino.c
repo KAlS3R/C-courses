@@ -480,16 +480,53 @@ int lenghtSentence(const char* chaine)
 #include <string.h>
 #include "main.h"
 
+void initialiserCoordonnees(Coordonnees *point)
+
 
 int main(int argc, char * argv[])
-{
-	Coordonnees point;
-	scanf("%d", &point.x);
-	scanf("%d", &point.y);
-	printf("La valeur de point.x est : %d, et celle de point y est : %d", point.x, point.y);
-	//point.x = 10;
-	//point.y = 20;
+/*{
+	Coordonnees *point1 = NULL, *point2 = NULL;
+	//scanf("%d", &point.x);
+	//scanf("%d", &point.y);
+	//printf("La valeur de point.x est : %d, et celle de point y est : %d", point.x, point.y);
+	point.x = 10;
+	point.y = 20;
 	//printf("Le point x est %d", point.x);
 	//puts("hello");
+
+	Personne utilisateur;
+	printf("Quel est votre nom ?");
+	scanf("%s", utilisateur.nom);
+	printf("Votre prenom ? ");
+    scanf("%s", utilisateur.prenom);
+
+    printf("Vous vous appelez %s %s", utilisateur.prenom, utilisateur.nom);
+
 	return 0;
 }
+
+*/
+
+{
+	Coordonnees monPoint;
+
+	initialiserCoordonnees(&monPoint);
+
+	return 0;
+}
+
+void initialiserCoordonnees(Coordonnees *point)
+{
+	//(*point).x = 0;
+	//(*point).y = 0;
+	point->x = 0;
+	point->y = 0;
+
+}
+
+
+typedef enum Volume Volume;
+enum Volume
+{
+	FAIBLE, MOYEN, FORT
+};
